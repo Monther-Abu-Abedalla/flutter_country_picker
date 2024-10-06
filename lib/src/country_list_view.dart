@@ -128,7 +128,7 @@ class _CountryListViewState extends State<CountryListView> {
       children: [
         Column(
           children: <Widget>[
-            const SizedBox(height: 32),
+            const SizedBox(height: 50),
             if (widget.showSearch)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
@@ -168,16 +168,17 @@ class _CountryListViewState extends State<CountryListView> {
         ),
         // add close button
         PositionedDirectional(
-          top: 0,
-          end: 0,
-          child: IconButton(
-            icon: const Icon(
-              Icons.close,
-              color: Colors.black,
+          top: 10,
+          end: 20,
+          child: CircleAvatar(
+            child: IconButton(
+              icon: const Icon(
+                Icons.close,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
           ),
         ),
       ],
