@@ -168,8 +168,8 @@ class _CountryListViewState extends State<CountryListView> {
         ),
         // add close button
         PositionedDirectional(
-          top: 0,
-          end: 0,
+          top: 20,
+          end: 20,
           child: IconButton(
             icon: const Icon(
               Icons.close,
