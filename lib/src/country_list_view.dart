@@ -171,7 +171,10 @@ class _CountryListViewState extends State<CountryListView> {
           top: 0,
           end: 0,
           child: IconButton(
-            icon: const Icon(Icons.close),
+            icon: const Icon(
+              Icons.close,
+              color: Colors.black,
+            ),
             onPressed: () {
               Navigator.pop(context);
             },
