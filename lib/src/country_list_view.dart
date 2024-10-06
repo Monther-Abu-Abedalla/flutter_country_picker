@@ -154,7 +154,7 @@ class _CountryListViewState extends State<CountryListView> {
         Expanded(
           child: ListView(
             children: [
-              if (_favoriteList != null && _searchController.text.isNotEmpty) ...[
+              if (_favoriteList != null && _searchController.text.isEmpty) ...[
                 ..._favoriteList!
                     .map<Widget>((currency) => _listRow(currency))
                     .toList(),
