@@ -7,6 +7,7 @@ import 'country_list_view.dart';
 void showCountryListBottomSheet({
   required BuildContext context,
   required ValueChanged<Country> onSelect,
+ required Color closeIconColor,
   VoidCallback? onClosed,
   List<String>? favorite,
   List<String>? exclude,
@@ -40,6 +41,7 @@ void showCountryListBottomSheet({
       showSearch,
       moveAlongWithKeyboard,
       customFlagBuilder,
+      closeIconColor,
     ),
   ).whenComplete(() {
     if (onClosed != null) onClosed();
@@ -59,6 +61,7 @@ Widget _builder(
   bool showSearch,
   bool moveAlongWithKeyboard,
   CustomFlagBuilder? customFlagBuilder,
+  Color closeIconColor,
 ) {
   final device = MediaQuery.of(context).size.height;
   final statusBarHeight = MediaQuery.of(context).padding.top;
@@ -93,6 +96,7 @@ Widget _builder(
         borderRadius: _borderRadius,
       ),
       child: CountryListView(
+        closeIconColor: closeIconColor,
         onSelect: onSelect,
         exclude: exclude,
         favorite: favorite,

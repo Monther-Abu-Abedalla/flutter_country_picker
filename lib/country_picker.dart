@@ -53,6 +53,7 @@ export 'src/country_service.dart';
 void showCountryPicker({
   required BuildContext context,
   required ValueChanged<Country> onSelect,
+  required Color closeIconColor,
   VoidCallback? onClosed,
   List<String>? favorite,
   List<String>? exclude,
@@ -87,5 +88,6 @@ void showCountryPicker({
     useSafeArea: useSafeArea,
     useRootNavigator: useRootNavigator,
     moveAlongWithKeyboard: moveAlongWithKeyboard,
+    closeIconColor: closeIconColor,
   );
 }

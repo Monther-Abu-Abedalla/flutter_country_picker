@@ -48,6 +48,9 @@ class CountryListView extends StatefulWidget {
   /// Custom builder function for flag widget
   final CustomFlagBuilder? customFlagBuilder;
 
+  // Close icon color
+  final Color closeIconColor;
+
   const CountryListView({
     Key? key,
     required this.onSelect,
@@ -60,6 +63,7 @@ class CountryListView extends StatefulWidget {
     this.showWorldWide = false,
     this.showSearch = true,
     this.customFlagBuilder,
+    required this.closeIconColor,
   })  : assert(
           exclude == null || countryFilter == null,
           'Cannot provide both exclude and countryFilter',
@@ -78,6 +82,8 @@ class _CountryListViewState extends State<CountryListView> {
   List<Country>? _favoriteList;
   late TextEditingController _searchController;
   late bool _searchAutofocus;
+
+  _CountryListViewState();
 
   @override
   void initState() {
@@ -174,7 +180,7 @@ class _CountryListViewState extends State<CountryListView> {
             child: IconButton(
               icon: Icon(
                 Icons.close,
-                color: MediaQuery.of(context).platformBrightness == Brightness.dark ? Colors.white : Colors.black,
+                color: widget.closeIconColor,
               ),
               onPressed: () {
                 Navigator.pop(context);
