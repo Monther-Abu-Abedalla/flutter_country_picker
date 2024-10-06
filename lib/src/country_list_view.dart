@@ -174,7 +174,7 @@ class _CountryListViewState extends State<CountryListView> {
             child: IconButton(
               icon: Icon(
                 Icons.close,
-                color: Theme.of(context).colorScheme.onSecondary,
+                color: MediaQuery.of(context).platformBrightness == Brightness.dark ? Colors.white : Colors.black,
               ),
               onPressed: () {
                 Navigator.pop(context);
