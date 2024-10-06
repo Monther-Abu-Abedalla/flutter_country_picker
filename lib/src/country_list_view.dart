@@ -172,8 +172,9 @@ class _CountryListViewState extends State<CountryListView> {
           end: 20,
           child: CircleAvatar(
             child: IconButton(
-              icon: const Icon(
+              icon: Icon(
                 Icons.close,
+                color: Theme.of(context).colorScheme.onSecondary,
               ),
               onPressed: () {
                 Navigator.pop(context);
